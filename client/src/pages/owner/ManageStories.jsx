@@ -227,12 +227,12 @@ const ManageStories = () => {
               </div>
 
               <div className="flex gap-2">
-                <button
+                {/* <button
                   onClick={() => alert("Edit functionality coming soon!")}
                   className="p-3 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors"
                 >
                   <Edit size={20} />
-                </button>
+                </button> */}
                 <button
                   onClick={() => handleDelete(story._id)}
                   className="p-3 bg-red-100 text-red-600 rounded-lg hover:bg-red-200 transition-colors"
