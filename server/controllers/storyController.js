@@ -156,20 +156,15 @@ const add = async (req, res) => {
         .json({ success: false, message: "All fields are required" });
     }
 
-    // رفع الصورة إلى Cloudinary
-    const uploadResult = await cloudinary.uploader.upload(req.file.path, {
-      folder: "stories",
-    });
+    console.log("File info:", req.file);
 
-    // حذف الصورة من المجلد المؤقت
-    fs.unlinkSync(req.file.path);
+    const imageUrl = req.file.path || req.file.url;
 
-    // إنشاء القصة
     const story = await Story.create({
       title,
       type,
       description,
-      image: uploadResult.secure_url,
+      image: imageUrl,
     });
 
     res.status(201).json({

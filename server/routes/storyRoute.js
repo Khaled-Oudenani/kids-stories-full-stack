@@ -12,7 +12,7 @@
 // export default storyRouter;
 
 import express from "express";
-import upload from "../middlewares/upload.js";
+import upload from "../configs/multer.js";
 import { add, getAll, remove } from "../controllers/storyController.js";
 
 const router = express.Router();
