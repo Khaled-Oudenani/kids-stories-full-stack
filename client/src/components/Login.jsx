@@ -28,7 +28,7 @@ export const Login = () => {
     try {
       if (state === "login") {
         const { data } = await axios.post(
-          "http://localhost:3000/api/user/login",
+          `${import.meta.env.VITE_API_URL}/api/user/login`,
           {
             email,
             password,
@@ -47,7 +47,7 @@ export const Login = () => {
         }
       } else {
         const { data } = await axios.post(
-          "http://localhost:3000/api/user/register",
+          `${import.meta.env.VITE_API_URL}/api/user/register`,
           {
             name,
             email,

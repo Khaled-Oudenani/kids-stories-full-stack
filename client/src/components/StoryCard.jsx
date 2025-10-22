@@ -19,7 +19,7 @@ const StoryCard = ({ story }) => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/user/favorites/toggle",
+        `${import.meta.env.VITE_API_URL}/api/user/favorites/toggle`,
         { storyId: story._id },
         {
           headers: { Authorization: `Bearer ${token}` },

@@ -98,7 +98,9 @@ export const AppProvider = ({ children }) => {
   // ✅ تحميل القصص من الخادم
   const getStories = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/story/all");
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/story/all`
+      );
       if (res.data.success) {
         setStories(res.data.stories);
       }
@@ -115,7 +117,7 @@ export const AppProvider = ({ children }) => {
 
     try {
       const { data } = await axios.get(
-        "http://localhost:3000/api/user/favorites",
+        `${import.meta.env.VITE_API_URL}/api/user/favorites`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
