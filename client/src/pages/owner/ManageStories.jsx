@@ -125,7 +125,9 @@ const ManageStories = () => {
   useEffect(() => {
     const fetchStories = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/story/all");
+        const res = await axios.get(
+          `${import.meta.env.VITE_API_URL}/api/story/all`
+        );
         if (res.data.success) {
           setStories(res.data.stories);
         } else {

@@ -264,7 +264,7 @@ const AddStory = () => {
       data.append("image", formData.image);
 
       const response = await axios.post(
-        "http://localhost:3000/api/story/add", // عدّل حسب عنوان السيرفر
+        `${import.meta.env.VITE_API_URL}/api/story/add`,
         data,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
